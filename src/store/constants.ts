@@ -1,0 +1,6 @@
+export const SET_LOADING = 'SET_LOADING'
+export const SET_PARTITIONS='SET_PARTITIONS'
+export const SET_BANNERS = 'SET_BANNERS'
+export const SET_CARBRAND ='SET_CARBRAND'
+export const SET_HOTCAR = 'SET_HOTCAR'
+export const SET_JIAOCHE = 'SET_JIAOCHE'
