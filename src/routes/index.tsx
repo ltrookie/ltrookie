@@ -10,6 +10,10 @@ const Cheyouquan = lazy(() => import ('@/pages/Cheyouquan'))
 const Xuanche = lazy(() => import ('@/pages/Xuanche'))
 const Ershouche = lazy(() => import ('@/pages/Ershouche'))
 const Fuwu = lazy(() => import ('@/pages/Fuwu'))
+const Search = lazy(() => import ('@/pages/Search'))
+const Cardetail = lazy(() => import ('@/pages/Cardetail'))
+
+
 
 
 
@@ -32,9 +36,11 @@ export default () => {
                 <Route path="/home/zhibo" element={<ZhiBo/>}/>
                 <Route path="/home/xiaoshiping" element={<XiaoShiPing/>}/>
                 <Route path="/home/newcar" element={<NewCar/>}/>
-
                 </Route>
-                {/* <Route path="/search" element={<Search />}></Route> */}
+                <Route path="/search" element={<Search />}></Route>
+                <Route path="/cardetail/:id" element={<Cardetail />}></Route>
+
+                
             </Routes>
         </>
     )

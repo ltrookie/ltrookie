@@ -29,8 +29,10 @@ const Bottom = () => {
 
 
   return (
+    
     <Wrapper>
-      <div className='video_bottom'>
+      { 
+        <div className='video_bottom'>
 
         <NavLink to="/home/tuijian" className={classnames({ active: homeReg.test(pathname) || pathname == "/" })}>
           <div className="circle"><i className='iconfont icon-shouye'></i></div>
@@ -52,7 +54,9 @@ const Bottom = () => {
           <div className="circle "><i className="iconfont icon-yonghu"></i></div>
           <span>服务</span>
         </NavLink>
-      </div>
+      </div> 
+      }
+      
     </Wrapper>
   )
 }

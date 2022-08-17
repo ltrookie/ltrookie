@@ -1,15 +1,15 @@
-const debounce = (func:any, delay:any) => {
-    let timer:any;
-    return function (...args:any) {
-        if(timer) {
-        clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-        func(...args);
-        clearTimeout(timer);
-        }, delay);
-    };
-};
+const debounce = (fn:any, delay:any) => {
+    let timer:any
+    return (...args:any) => {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => {
+        fn(...args)
+      }, delay)
+    }
+  }
+
 
 // export const getName = list => {
 //     let str = "";

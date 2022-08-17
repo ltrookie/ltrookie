@@ -5,7 +5,9 @@ import {
     getTuijianBannersRequest,
     getXuancheCarbrandRequest,
     getXuancheHotcarRequest,
-    getTuijianJiaocheRequest
+    getTuijianJiaocheRequest,
+    getSearchCarRequest,
+    getCardetailRequest
 } from '@/api/request'
 
 export const setLoading = (data: boolean) => ({
@@ -35,6 +37,16 @@ export const setHotcar = (data: any[]) => ({
 
 export const setJiaoche = (data: any[]) => ({
     type: actionTypes.SET_JIAOCHE,
+    data
+})
+
+export const setSearchCar = (data:any[]) =>({
+    type:actionTypes.SET_SEARCHCAR,
+    data
+})
+
+export const setCardetail = (data:any[]) =>({
+    type:actionTypes.SET_CARDETAIL,
     data
 })
 
@@ -70,6 +82,37 @@ export const getXuancheDataAction = () => {
         })
     }
 }
+
+export const getSearchDataAction = (key:any) =>{
+    return (dispatch:Dispatch) => {
+        dispatch(setLoading(true))
+        return Promise.all([
+            getSearchCarRequest(key)
+        ]).then(([searchResult])=>{
+            let searchcar = searchResult.data
+            let cardata=searchcar.splice(0)
+            dispatch(setSearchCar(cardata))
+            dispatch(setLoading(false))
+        })
+}
+}
+
+export const getCardetailDataAction = (id:any) =>{
+    
+    
+    return (dispatch:Dispatch) => {
+        dispatch(setLoading(true))
+        return Promise.all([
+            getCardetailRequest(id)
+        ]).then(([cardetailResult])=>{
+            console.log(cardetailResult.data.tab_list,'detail');
+            let cardetail = cardetailResult.data.tab_list[0].data
+            dispatch(setCardetail(cardetail))
+            dispatch(setLoading(false))
+        })
+}
+}
+
 
 
 

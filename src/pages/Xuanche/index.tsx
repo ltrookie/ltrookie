@@ -8,6 +8,8 @@ import { XuancheWrapper,EnterLoading } from './style'
 import Header from '@/components/Header'
 import LazyLoad from "react-lazyload";
 import Loading from '@/components/common/loading'
+import Bottom from "@/components/common/Bottom"
+
 
 
 
@@ -237,8 +239,10 @@ const Xuanche: React.FC<XuancheProps> = (props) => {
         <Loading></Loading></EnterLoading>}
 
 
-
+     <Bottom/>
     </XuancheWrapper>
+ 
+
   )
 }
 

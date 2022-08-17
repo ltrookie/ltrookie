@@ -1,7 +1,6 @@
 import { useState,Suspense } from 'react'
 import {GlobalStyle} from './style'
 import Routes from '@/routes'
-import Bottom from "@/components/common/Bottom"
 import './App.css'
 
 
@@ -17,7 +16,6 @@ function App() {
       <Routes/>
       
       </Suspense>
-      <Bottom/>
     </div>
   )
 }

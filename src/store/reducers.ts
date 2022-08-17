@@ -11,6 +11,12 @@ const initalState = {
     xuanche:{
         carbrand:[],
         hotcar:[]
+    },
+    search:{
+        car:[]
+    },
+    cardetail:{
+        cardata:[]
     }
 
 }
@@ -79,10 +85,40 @@ const xuancheReducer = (state = initalState.xuanche, action: AnyAction) => {
     
 }
 
+const searchReducer = (state = initalState.search,action:AnyAction)=>{
+    switch(action.type){
+        case actionTypes.SET_SEARCHCAR:
+            return {
+                ...state,
+                car:action.data
+            }
+        break;
+        default :
+        return state;
+    }
+
+}
+
+const cardetailReducer = (state = initalState.cardetail,action:AnyAction)=>{
+    switch(action.type){
+        case actionTypes.SET_CARDETAIL:
+            return {
+                ...state,
+                cardata:action.data
+            }
+        break;
+        default :
+        return state;
+    }
+
+}
+
 
 export default combineReducers({
     loading:loadingReducer,
     partitions:partitionsReducer,
     tuijian:tuijianReducer,
-    xuanche:xuancheReducer
+    xuanche:xuancheReducer,
+    search:searchReducer,
+    cardetail:cardetailReducer
 })

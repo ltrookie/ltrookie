@@ -13,7 +13,7 @@ export default function Header() {
       </Link>
      
       <div className="search">
-      <Link to="/" className="search-box">
+      <Link to="/search" className="search-box">
       <SearchBar
           placeholder='猜你所想'
           style={{ '--background': '#f4f5f6' ,
